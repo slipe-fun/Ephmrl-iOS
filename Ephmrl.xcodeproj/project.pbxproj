@@ -20,14 +20,14 @@
 			containerPortal = DB01A1AC2FE46D4D00AF0B70 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = DB01A1B32FE46D4D00AF0B70;
-			remoteInfo = Bloom;
+			remoteInfo = Ephmrl;
 		};
 		DB01A1CF2FE46D5000AF0B70 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DB01A1AC2FE46D4D00AF0B70 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = DB01A1B32FE46D4D00AF0B70;
-			remoteInfo = Bloom;
+			remoteInfo = Ephmrl;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -37,10 +37,23 @@
 		DB01A1CE2FE46D5000AF0B70 /* EphmrlUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EphmrlUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		DB78A8B43004200F001BECF6 /* Exceptions for "Ephmrl" folder in "Ephmrl" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = DB01A1B32FE46D4D00AF0B70 /* Ephmrl */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		DB01A1B62FE46D4D00AF0B70 /* Bloom */ = {
+		DB01A1B62FE46D4D00AF0B70 /* Ephmrl */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Bloom;
+			exceptions = (
+				DB78A8B43004200F001BECF6 /* Exceptions for "Ephmrl" folder in "Ephmrl" target */,
+			);
+			path = Ephmrl;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -78,7 +91,7 @@
 		DB01A1AB2FE46D4D00AF0B70 = {
 			isa = PBXGroup;
 			children = (
-				DB01A1B62FE46D4D00AF0B70 /* Bloom */,
+				DB01A1B62FE46D4D00AF0B70 /* Ephmrl */,
 				DB01A1B52FE46D4D00AF0B70 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -109,7 +122,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				DB01A1B62FE46D4D00AF0B70 /* Bloom */,
+				DB01A1B62FE46D4D00AF0B70 /* Ephmrl */,
 			);
 			name = Ephmrl;
 			packageProductDependencies = (
@@ -119,7 +132,7 @@
 				DB49ED792FEC50A00099C921 /* Lottie */,
 				DB78A6652FFD0731001BECF6 /* DequeModule */,
 			);
-			productName = Bloom;
+			productName = Ephmrl;
 			productReference = DB01A1B42FE46D4D00AF0B70 /* Ephmrl.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -139,7 +152,7 @@
 			name = EphmrlTests;
 			packageProductDependencies = (
 			);
-			productName = BloomTests;
+			productName = EphmrlTests;
 			productReference = DB01A1C42FE46D5000AF0B70 /* EphmrlTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
@@ -159,7 +172,7 @@
 			name = EphmrlUITests;
 			packageProductDependencies = (
 			);
-			productName = BloomUITests;
+			productName = EphmrlUITests;
 			productReference = DB01A1CE2FE46D5000AF0B70 /* EphmrlUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
@@ -407,10 +420,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Bloom/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Ephmrl/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Bloom/Info.plist;
+				INFOPLIST_FILE = Ephmrl/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Ephmrl;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -442,10 +455,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Bloom/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Ephmrl/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Bloom/Info.plist;
+				INFOPLIST_FILE = Ephmrl/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Ephmrl;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -479,7 +492,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = pw.bloomapp.app.BloomTests;
+				PRODUCT_BUNDLE_IDENTIFIER = org.ephmrl.app.EphmrlTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -488,7 +501,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bloom.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Bloom";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ephmrl.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Ephmrl";
 			};
 			name = Debug;
 		};
@@ -501,7 +514,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = pw.bloomapp.app.BloomTests;
+				PRODUCT_BUNDLE_IDENTIFIER = org.ephmrl.app.EphmrlTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -510,7 +523,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bloom.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Bloom";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ephmrl.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Ephmrl";
 			};
 			name = Release;
 		};
@@ -522,7 +535,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = pw.bloomapp.app.BloomUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = org.ephmrl.app.EphmrlUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -531,7 +544,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
-				TEST_TARGET_NAME = Bloom;
+				TEST_TARGET_NAME = Ephmrl;
 			};
 			name = Debug;
 		};
@@ -543,7 +556,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = pw.bloomapp.app.BloomUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = org.ephmrl.app.EphmrlUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -552,7 +565,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
-				TEST_TARGET_NAME = Bloom;
+				TEST_TARGET_NAME = Ephmrl;
 			};
 			name = Release;
 		};
