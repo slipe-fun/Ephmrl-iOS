@@ -72,7 +72,6 @@ struct Theme {
 
         static let subTitle = fonts.medium(size: 15)
         
-
         static let footnote = fonts.medium(size: 14)
         
         static let messageTime = fonts.regular(size: 12)

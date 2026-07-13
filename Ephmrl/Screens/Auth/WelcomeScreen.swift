@@ -13,7 +13,6 @@ struct WelcomeScreen: View {
     
     var body: some View {
         VStack(alignment: .trailing) {
-            Spacer()
             WelcomeFooterView()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
