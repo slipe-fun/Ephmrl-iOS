@@ -1,8 +1,8 @@
 //
 //  EnviromentValues+SafeArea.swift
-//  Bloom
+//  Ephmrl
 //
-//  Created by Аскольд on 20.06.2026.
+//  Created by Аскольд on 13.07.2026.
 //
 
 import SwiftUI

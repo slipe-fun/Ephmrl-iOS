@@ -1,8 +1,8 @@
 //
 //  Morph.metal
-//  Bloom
+//  Ephmrl
 //
-//  Created by Аскольд on 07.07.2026.
+//  Created by Аскольд on 13.07.2026.
 //
 
 #include <metal_stdlib>

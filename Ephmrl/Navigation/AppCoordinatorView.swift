@@ -1,8 +1,8 @@
 //
 //  AppCoordinatorView.swift
-//  Bloom
+//  Ephmrl
 //
-//  Created by Аскольд on 20.06.2026.
+//  Created by Аскольд on 13.07.2026.
 //
 
 import SwiftUI
@@ -47,20 +47,11 @@ struct AppCoordinatorView: View {
             ZStack {
                 Theme.colors.background.ignoresSafeArea()
                 
-                if router.isAuthenticated {
-                    SettingsScreen()
-                        .environment(router)
-                        .background(Theme.colors.grayBackground.ignoresSafeArea())
-                        .modifier(SettingsBehindModifier(progress: settingsProgress, cornerRadius: maxRadius))
-                        .allowsHitTesting(isSettingsTop)
-                        .zIndex(0)
-                }
-                
                 let isRootRendered = standardPath.count < 2
                 
                 Group {
                     if router.isAuthenticated {
-                        ChatsScreen()
+                        WelcomeScreen()
                             .environment(router)
                             .background(Theme.colors.background.ignoresSafeArea())
                             .modifier(ChatsRootModifier(

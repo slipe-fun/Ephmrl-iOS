@@ -1,8 +1,8 @@
 //
 //  GooeyShader.metal
-//  Bloom
+//  Ephmrl
 //
-//  Created by Аскольд on 21.06.2026.
+//  Created by Аскольд on 13.07.2026.
 //
 
 #include <metal_stdlib>

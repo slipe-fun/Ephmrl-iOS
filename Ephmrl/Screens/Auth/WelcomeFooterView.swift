@@ -1,8 +1,8 @@
 //
 //  WelcomeFooterView.swift
-//  Bloom
+//  Ephmrl
 //
-//  Created by Аскольд on 24.06.2026.
+//  Created by Аскольд on 13.07.2026.
 //
 
 import SwiftUI
@@ -10,19 +10,12 @@ import SwiftUI
 struct WelcomeFooterView: View {
     @Environment(AppRouter.self) private var router
     @State private var isAppeared = false
-    @Binding var shown: Bool
     
     var body: some View {
         GlassEffectContainer{
             VStack(alignment: .trailing, spacing: Theme.spacing.md) {
                 Button {
-                    Task {
-                        let success = await BiometricAuthManager.authenticate()
-                        if success {
-                            try? await Task.sleep(for: .seconds(2))
-                            self.shown = true
-                        }
-                    }
+                    print("swag")
                 } label: {
                     HStack(spacing: Theme.spacing.sm) {
                         CustomLottieView(
