@@ -15,5 +15,7 @@ struct WelcomeScreen: View {
         VStack(alignment: .trailing) {
             WelcomeFooterView()
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Theme.colors.background)
     }
 }

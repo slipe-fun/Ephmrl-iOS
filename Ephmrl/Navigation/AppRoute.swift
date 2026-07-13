@@ -4,12 +4,14 @@
 //
 //  Created by Аскольд on 13.07.2026.
 //
-
 import SwiftUI
 
-enum AppRoute: Hashable {
-    case welcome
-    case articleCreate
+enum MainRoute: Hashable {
     case feed
     case profile
+    case article(id: String)
+}
+
+enum ComposeRoute: Hashable {
+    case articleCreate
 }

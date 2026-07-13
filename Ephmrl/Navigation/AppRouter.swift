@@ -11,13 +11,17 @@ import Observation
 @Observable
 @MainActor
 class AppRouter {
-    var path: [AppRoute] = []
     
     var isAuthenticated: Bool {
         didSet {
             UserDefaults.standard.set(isAuthenticated, forKey: "isAuthenticated")
         }
     }
+    
+    var mainPath: [MainRoute] = []
+    var composePath: [ComposeRoute] = []
+    
+    var focus: PanelFocus = .main
     
     init() {
         self.isAuthenticated = UserDefaults.standard.bool(forKey: "isAuthenticated")
@@ -27,43 +31,65 @@ class AppRouter {
         }
     }
     
-    
-    var standardPath: [AppRoute] {
-        path
-    }
-    
     func setAuthenticated(_ authenticated: Bool) {
         withAnimation(.quickSpring) {
             self.isAuthenticated = authenticated
             if !authenticated {
-                self.path.removeAll()
+                self.mainPath.removeAll()
+                self.composePath.removeAll()
+                self.focus = .main
             }
         }
     }
     
-    func push(_ route: AppRoute) {
+    func pushMain(_ route: MainRoute) {
         withAnimation(.normalSpring) {
-            path.append(route)
+            mainPath.append(route)
         }
     }
     
-    func pop(animated: Bool = true) {
+    func popMain(animated: Bool = true) {
+        guard !mainPath.isEmpty else { return }
         if animated {
-            withAnimation(.normalSpring) {
-                if !path.isEmpty {
-                    path.removeLast()
-                }
-            }
+            withAnimation(.normalSpring) { mainPath.removeLast() }
         } else {
-            if !path.isEmpty {
-                path.removeLast()
-            }
+            mainPath.removeLast()
         }
     }
     
-    func popToRoot() {
+    func popMainToRoot() {
+        withAnimation(.normalSpring) { mainPath.removeAll() }
+    }
+    
+    
+    func pushCompose(_ route: ComposeRoute) {
         withAnimation(.normalSpring) {
-            path.removeAll()
+            composePath.append(route)
         }
+    }
+    
+    func popCompose(animated: Bool = true) {
+        guard !composePath.isEmpty else { return }
+        if animated {
+            withAnimation(.normalSpring) { composePath.removeLast() }
+        } else {
+            composePath.removeLast()
+        }
+    }
+    
+    func popComposeToRoot() {
+        withAnimation(.normalSpring) { composePath.removeAll() }
+    }
+    
+    func setFocus(_ newFocus: PanelFocus, animated: Bool = true) {
+        if animated {
+            withAnimation(.normalSpring) { focus = newFocus }
+        } else {
+            focus = newFocus
+        }
+    }
+    
+    func toggleFocus() {
+        setFocus(focus == .main ? .compose : .main)
     }
 }

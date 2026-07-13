@@ -7,28 +7,6 @@
 
 import SwiftUI
 
-struct SettingsBehindModifier: AnimatableModifier {
-    var progress: CGFloat
-    var cornerRadius: CGFloat = 44
-    
-    var animatableData: CGFloat {
-        get { progress }
-        set { progress = newValue }
-    }
-
-    func body(content: Content) -> some View {
-        let scale: CGFloat = 0.925 + 0.075 * progress
-        let opacity: CGFloat = 0.0 + 1.0 * progress
-        let radius: CGFloat = (progress >= 0.999 || progress <= 0.001) ? 0 : cornerRadius
-
-        content
-            .ignoresSafeArea()
-            .clipShape(RoundedRectangle(cornerRadius: radius, style: .continuous))
-            .scaleEffect(scale, anchor: .center)
-            .opacity(opacity)
-    }
-}
-
 struct ChatsRootModifier: AnimatableModifier {
     var offset: CGFloat
     var isSettingsTransition: Bool

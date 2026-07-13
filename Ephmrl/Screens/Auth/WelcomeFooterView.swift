@@ -4,7 +4,6 @@
 //
 //  Created by Аскольд on 13.07.2026.
 //
-
 import SwiftUI
 
 struct WelcomeFooterView: View {
@@ -15,7 +14,7 @@ struct WelcomeFooterView: View {
         GlassEffectContainer{
             VStack(alignment: .trailing, spacing: Theme.spacing.md) {
                 Button {
-                    print("swag")
+                    router.isAuthenticated = true
                 } label: {
                     HStack(spacing: Theme.spacing.sm) {
                         CustomLottieView(
