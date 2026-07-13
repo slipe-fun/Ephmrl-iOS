@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct StackContainerView<Route: Hashable, Root: View, Pushed: View>: View {
+    @Environment(\.customSafeArea) private var safeArea
+    
     let path: [Route]
     let isInteractive: Bool
-    let safeArea: EdgeInsets
     let onPop: () -> Void
     let root: () -> Root
     let content: (Route) -> Pushed
@@ -18,14 +19,12 @@ struct StackContainerView<Route: Hashable, Root: View, Pushed: View>: View {
     init(
         path: [Route],
         isInteractive: Bool,
-        safeArea: EdgeInsets,
         onPop: @escaping () -> Void,
         @ViewBuilder root: @escaping () -> Root,
         @ViewBuilder content: @escaping (Route) -> Pushed
     ) {
         self.path = path
         self.isInteractive = isInteractive
-        self.safeArea = safeArea
         self.onPop = onPop
         self.root = root
         self.content = content
@@ -57,6 +56,7 @@ struct StackContainerView<Route: Hashable, Root: View, Pushed: View>: View {
                         standardProgress: standardProgress,
                         cornerRadius: maxRadius
                     ))
+                    .background(Theme.colors.panelBackground.ignoresSafeArea())
                     .opacity(isRootRendered ? 1.0 : 0.0)
                     .allowsHitTesting(isInteractive && isRootRendered)
                     .zIndex(1)

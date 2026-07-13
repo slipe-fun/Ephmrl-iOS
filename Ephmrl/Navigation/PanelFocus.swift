@@ -9,5 +9,8 @@ import Foundation
 
 enum PanelFocus {
     case main
+    case quarter
+    case half
+    case threeQuarters
     case compose
 }

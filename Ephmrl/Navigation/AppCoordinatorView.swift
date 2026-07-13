@@ -14,30 +14,34 @@ struct AppCoordinatorView: View {
     @State private var bottomSheetZIndex: Double = 200
 
     var body: some View {
-        ZStack {
-            Theme.colors.grayBackground.ignoresSafeArea()
+        GeometryReader { proxy in
+            let safeArea = proxy.safeAreaInsets
+            
+            ZStack {
+                Theme.colors.background.ignoresSafeArea()
 
-            Group {
-                if router.isAuthenticated {
-                    DualPanelCoordinatorView()
-                        .environment(router)
-                } else {
-                    WelcomeScreen()
-                        .environment(router)
-                        .background(Theme.colors.background.ignoresSafeArea())
+                Group {
+                    if router.isAuthenticated {
+                        DualPanelCoordinatorView()
+                            .environment(router)
+                    } else {
+                        WelcomeScreen()
+                            .environment(router)
+                    }
                 }
-            }
-            .transition(.opacity)
-            .zIndex(1)
+                .transition(.opacity)
+                .zIndex(1)
 
-            GlobalBottomSheetOverlayView()
-                .zIndex(bottomSheetZIndex)
-        }
-        .ignoresSafeArea()
-        .onChange(of: bottomSheetManager.state) { oldValue, newValue in
-            if oldValue == .hidden && newValue != .hidden {
-                let topPathCount = router.focus == .main ? router.mainPath.count : router.composePath.count
-                bottomSheetZIndex = Double(topPathCount) + 1.5
+                GlobalBottomSheetOverlayView()
+                    .zIndex(bottomSheetZIndex)
+            }
+            .ignoresSafeArea()
+            .environment(\.customSafeArea, safeArea)
+            .onChange(of: bottomSheetManager.state) { oldValue, newValue in
+                if oldValue == .hidden && newValue != .hidden {
+                    let topPathCount = router.focus == .main ? router.mainPath.count : router.composePath.count
+                    bottomSheetZIndex = Double(topPathCount) + 1.5
+                }
             }
         }
     }

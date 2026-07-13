@@ -106,7 +106,7 @@ class HapticManager {
         selectionGenerator.prepare()
     }
     
-    func triggerSettingsOpeningHaptic() {
+    func triggerSnapHaptics() {
         hapticTask?.cancel()
         
         hapticTask = Task {

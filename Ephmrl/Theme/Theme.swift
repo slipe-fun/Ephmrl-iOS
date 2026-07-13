@@ -80,6 +80,7 @@ struct Theme {
     
     struct colors {
         static let background = Color.dynamic(lightHex: "ffffff", darkHex: "000000")
+        static let panelBackground = Color.dynamic(lightHex: "ffffff", darkHex: "141415")
         static let text = Color.dynamic(lightHex: "000000", darkHex: "ffffff")
         static let grayBackground = Color.dynamic(lightHex: "f1f1f4", darkHex: "000000ff")
         static let secondaryText = Color.dynamic(lightHex: "0000006b", darkHex: "ffffff6b")
@@ -88,7 +89,7 @@ struct Theme {
         static let sectionForeground = Color.dynamic(lightHex: "ffffff", darkHex: "1b1b1d")
         static let foreground = Color.dynamic(lightHex: "f1f1f4", darkHex: "1b1b1d")
         static let foregroundTransparent = Color.dynamic(lightHex: "0000001c", darkHex: "ffffff1c")
-        static let indicator = Color.dynamic(lightHex: "0000001a", darkHex: "ffffff26")
+        static let indicator = Color.dynamic(lightHex: "0000004d", darkHex: "ffffff4d")
         static let border = Color.dynamic(lightHex: "0000000d", darkHex: "ffffff17")
         static let shadow = Color.dynamic(light: Color.black.opacity(0.08), dark: Color.clear)
         
