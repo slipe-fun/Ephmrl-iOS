@@ -45,6 +45,7 @@ public struct SwitcherView<Value: Hashable>: View {
             }
             .contentShape(Capsule())
             .highPriorityGesture(dragGesture)
+            .sensoryFeedback(.selection, trigger: activeIndex)
             .glassEffect(.clear.interactive().tint(Theme.colors.glassBackdrop))
         }
     }

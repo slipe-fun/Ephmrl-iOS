@@ -18,7 +18,7 @@ struct AppCoordinatorView: View {
             let safeArea = proxy.safeAreaInsets
             
             ZStack {
-                Theme.colors.background.ignoresSafeArea()
+                Theme.colors.grayBackground.ignoresSafeArea()
 
                 Group {
                     if router.isAuthenticated {

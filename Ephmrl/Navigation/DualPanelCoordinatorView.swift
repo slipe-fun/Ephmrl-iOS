@@ -66,14 +66,14 @@ struct DualPanelCoordinatorView: View {
             VStack(spacing: 0) {
                 StackContainerView(
                     path: router.mainPath,
-                    isInteractive: router.focus == .main && !isDragging && sheetsAreIdle,
+                    isInteractive: !isDragging && sheetsAreIdle,
                     onPop: { router.popMain(animated: false) },
-                    root: { WelcomeScreen().opacity(mainOpacity) },
+                    root: { FeedScreen().opacity(mainOpacity) },
                     content: { route in
                         Group {
                             switch route {
                             case .feed, .profile, .article:
-                                WelcomeScreen()
+                                FeedScreen()
                             }
                         }
                         .opacity(mainOpacity)
@@ -128,7 +128,7 @@ struct DualPanelCoordinatorView: View {
 
                 StackContainerView(
                     path: router.composePath,
-                    isInteractive: router.focus == .compose && !isDragging && sheetsAreIdle,
+                    isInteractive: !isDragging && sheetsAreIdle,
                     onPop: { router.popCompose(animated: false) },
                     root: { WelcomeScreen().opacity(composeOpacity) },
                     content: { route in
