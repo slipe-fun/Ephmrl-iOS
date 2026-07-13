@@ -27,26 +27,10 @@ class AppRouter {
         }
     }
     
-    var isSettingsPresented: Bool {
-        get { path.contains(.settings) }
-        set {
-            if newValue && !path.contains(.settings) {
-                push(.settings)
-            } else if !newValue && path.last == .settings {
-                pop()
-            }
-        }
-    }
-    
     
     var standardPath: [AppRoute] {
-        path.filter { $0 != .settings }
+        path
     }
-    
-    var isSettingsTop: Bool {
-        path.last == .settings
-    }
-    
     
     func setAuthenticated(_ authenticated: Bool) {
         withAnimation(.quickSpring) {
@@ -60,10 +44,6 @@ class AppRouter {
     func push(_ route: AppRoute) {
         withAnimation(.normalSpring) {
             path.append(route)
-        
-            if route == .settings {
-                HapticManager.shared.triggerSettingsOpeningHaptic()
-            }
         }
     }
     

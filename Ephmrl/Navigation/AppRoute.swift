@@ -9,7 +9,7 @@ import SwiftUI
 
 enum AppRoute: Hashable {
     case welcome
-    case chats
-    case chatDetail(chatId: Int)
-    case settings
+    case articleCreate
+    case feed
+    case profile
 }

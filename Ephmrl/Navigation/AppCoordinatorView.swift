@@ -24,7 +24,7 @@ struct AppCoordinatorView: View {
             let safeArea = proxy.safeAreaInsets
 
             let standardPath = router.standardPath
-            let isSettingsTop = router.isSettingsTop
+            let isSettingsTop = false
             let isStandardTop = !standardPath.isEmpty
             let maxRadius = safeArea.top > 20 ? safeArea.top - 4 : 0.0
 
@@ -56,7 +56,7 @@ struct AppCoordinatorView: View {
                             .background(Theme.colors.background.ignoresSafeArea())
                             .modifier(ChatsRootModifier(
                                 offset: chatsOffset,
-                                isSettingsTransition: isSettingsTop,
+                                isSettingsTransition: false,
                                 settingsProgress: settingsProgress,
                                 standardProgress: standardProgress,
                                 cornerRadius: maxRadius
@@ -152,9 +152,9 @@ struct AppCoordinatorView: View {
     private func buildView(for route: AppRoute) -> some View {
         switch route {
         case .welcome: WelcomeScreen()
-        case .chats: ChatsScreen()
-        case .chatDetail(let chatId): ChatScreen(chatId: chatId)
-        case .settings: EmptyView()
+        case .articleCreate: WelcomeScreen()
+        case .feed: WelcomeScreen()
+        case .profile: WelcomeScreen()
         }
     }
 }

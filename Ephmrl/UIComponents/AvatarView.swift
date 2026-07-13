@@ -58,21 +58,12 @@ struct AvatarView: View {
     }
     
     private var defaultAvatarView: some View {
-        let colors = avatarGradient(for: id)
-        let initials = initials(from: name)
-        
         return Circle()
             .fill(
-                LinearGradient(
-                    colors: colors,
-                    startPoint: .bottom,
-                    endPoint: .top
-                )
+                Theme.colors.primary
             )
             .overlay(
-                Text(initials)
-                    .font(Theme.fonts.bold(size: dimension / 2.25))
-                    .foregroundStyle(Theme.colors.white)
+                IconView(name: "star_icon", size: dimension * 0.681, color: Theme.colors.white)
             )
     }
 }
