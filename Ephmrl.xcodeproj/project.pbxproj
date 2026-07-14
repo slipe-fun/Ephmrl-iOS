@@ -10,6 +10,8 @@
 		DB49ED6A2FE9931F0099C921 /* LiquidGlassKit in Frameworks */ = {isa = PBXBuildFile; productRef = DB49ED692FE9931F0099C921 /* LiquidGlassKit */; };
 		DB49ED7A2FEC50A00099C921 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = DB49ED792FEC50A00099C921 /* Lottie */; };
 		DB78A6662FFD0731001BECF6 /* DequeModule in Frameworks */ = {isa = PBXBuildFile; productRef = DB78A6652FFD0731001BECF6 /* DequeModule */; };
+		DB78A8C63006327D001BECF6 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = DB78A8C53006327D001BECF6 /* Nuke */; };
+		DB78A8C83006327D001BECF6 /* NukeUI in Frameworks */ = {isa = PBXBuildFile; productRef = DB78A8C73006327D001BECF6 /* NukeUI */; };
 		DBCCCD142FE8AC95004C9C94 /* BlurSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = DBCCCD132FE8AC95004C9C94 /* BlurSwiftUI */; };
 		DBCCCD162FE8AC95004C9C94 /* BlurUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = DBCCCD152FE8AC95004C9C94 /* BlurUIKit */; };
 /* End PBXBuildFile section */
@@ -64,8 +66,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DBCCCD162FE8AC95004C9C94 /* BlurUIKit in Frameworks */,
+				DB78A8C83006327D001BECF6 /* NukeUI in Frameworks */,
 				DBCCCD142FE8AC95004C9C94 /* BlurSwiftUI in Frameworks */,
 				DB78A6662FFD0731001BECF6 /* DequeModule in Frameworks */,
+				DB78A8C63006327D001BECF6 /* Nuke in Frameworks */,
 				DB49ED6A2FE9931F0099C921 /* LiquidGlassKit in Frameworks */,
 				DB49ED7A2FEC50A00099C921 /* Lottie in Frameworks */,
 			);
@@ -131,6 +135,8 @@
 				DB49ED692FE9931F0099C921 /* LiquidGlassKit */,
 				DB49ED792FEC50A00099C921 /* Lottie */,
 				DB78A6652FFD0731001BECF6 /* DequeModule */,
+				DB78A8C53006327D001BECF6 /* Nuke */,
+				DB78A8C73006327D001BECF6 /* NukeUI */,
 			);
 			productName = Ephmrl;
 			productReference = DB01A1B42FE46D4D00AF0B70 /* Ephmrl.app */;
@@ -213,6 +219,7 @@
 				DB49ED682FE9931F0099C921 /* XCRemoteSwiftPackageReference "LiquidGlassKit" */,
 				DB49ED782FEC50A00099C921 /* XCRemoteSwiftPackageReference "lottie-spm" */,
 				DB78A6642FFD0731001BECF6 /* XCRemoteSwiftPackageReference "swift-collections" */,
+				DB78A8C43006327D001BECF6 /* XCRemoteSwiftPackageReference "Nuke" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = DB01A1B52FE46D4D00AF0B70 /* Products */;
@@ -635,6 +642,14 @@
 				minimumVersion = 1.6.0;
 			};
 		};
+		DB78A8C43006327D001BECF6 /* XCRemoteSwiftPackageReference "Nuke" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Nuke";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 13.0.6;
+			};
+		};
 		DBCCCD122FE8AC95004C9C94 /* XCRemoteSwiftPackageReference "BlurUIKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/TimOliver/BlurUIKit";
@@ -660,6 +675,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DB78A6642FFD0731001BECF6 /* XCRemoteSwiftPackageReference "swift-collections" */;
 			productName = DequeModule;
+		};
+		DB78A8C53006327D001BECF6 /* Nuke */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DB78A8C43006327D001BECF6 /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = Nuke;
+		};
+		DB78A8C73006327D001BECF6 /* NukeUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DB78A8C43006327D001BECF6 /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = NukeUI;
 		};
 		DBCCCD132FE8AC95004C9C94 /* BlurSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;

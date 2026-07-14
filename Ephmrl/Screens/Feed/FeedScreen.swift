@@ -8,21 +8,27 @@
 import SwiftUI
 
 struct FeedScreen: View {
+    @Environment(\.customScreen) private var screenSize
     @State private var scrollY: CGFloat = 0
     @State private var collapsed: Bool = false
+    
+    let articles: [Article] = FeedMockData.articles
     
     var body: some View {
         ZStack(alignment: .top) {
             ScrollView {
-                LazyVStack(spacing: Theme.spacing.lg) {
-                    ForEach(1...10, id: \.self) { index in
-                        RoundedRectangle(cornerRadius: 30)
-                            .fill(Theme.colors.foregroundTransparent)
-                            .frame(maxWidth: .infinity)
-                            .frame(height: 100)
+                LazyVStack(spacing: Theme.spacing.xs) {
+                    ForEach(Array(articles.enumerated()), id: \.element.id) { index, article in
+                        FeedArticleView(article: article, targetWidth: screenSize.width)
+                        
+                        if index < articles.count - 1 {
+                            RoundedRectangle(cornerRadius: 2)
+                                .fill(Theme.colors.text.opacity(0.1))
+                                .frame(height: 1)
+                                .padding(.horizontal, Theme.spacing.xxxl)
+                        }
                     }
                 }
-                .padding(.horizontal, Theme.spacing.lg)
             }
             .scrollIndicators(.hidden)
             .onScrollGeometryChange(for: CGFloat.self) { geometry in

@@ -16,6 +16,7 @@ struct AppCoordinatorView: View {
     var body: some View {
         GeometryReader { proxy in
             let safeArea = proxy.safeAreaInsets
+            let screen = proxy.size
             
             ZStack {
                 Theme.colors.grayBackground.ignoresSafeArea()
@@ -37,6 +38,7 @@ struct AppCoordinatorView: View {
             }
             .ignoresSafeArea()
             .environment(\.customSafeArea, safeArea)
+            .environment(\.customScreen, screen)
             .onChange(of: bottomSheetManager.state) { oldValue, newValue in
                 if oldValue == .hidden && newValue != .hidden {
                     let topPathCount = router.focus == .main ? router.mainPath.count : router.composePath.count
